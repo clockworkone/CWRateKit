@@ -1,6 +1,13 @@
 # CWRateKit
 
-If you like the project, please do not forget to `star ★` this repository and follow me on GitHub. To help out with the project, see the [Сooperation](#сooperation) section.
+Create your own rate view controller for feedback from your customers.
+
+<p float="left">
+    <img src="https://github.com/clockworkone/CWRateKit/blob/master/Assets/preview-1.gif" width="256">
+    <img src="https://github.com/clockworkone/CWRateKit/blob/master/Assets/preview-2.gif" width="256">
+</p>
+
+If you like the project, please do not forget to `star ★` this repository and follow me on GitHub.
 
 ## Navigate
 
@@ -12,13 +19,16 @@ If you like the project, please do not forget to `star ★` this repository and 
     - [Manually](#manually)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
-    - [Duration](#duration)
-    - [Dark Mode](#dark-mode)
-    - [Layout](#layout)
-    - [Dismiss by Tap](#dismiss-by-tap)
-    - [Haptic](#haptic)   
-    - [Corner Radius](#corner-radius)
-- [Сooperation](#сooperation)
+    - [Overlay](#overlay)
+    - [Popup](#Popup)
+    - [Close Button](#close-button)
+    - [Haptic](#haptic)
+    - [Marks](#marks)   
+    - [Header Image](#header-image)
+    - [Submit Button](#submit-button)
+    - [Success Text](#success-text)
+    - [Delegate](#delegate)
+- [Communication](#communication)
 - [License](#license)
 
 ## Requirements
@@ -58,3 +68,130 @@ github "clockworkone/CWRateKit"
 ### Manually
 
 If you prefer not to use any of dependency managers, you can integrate `CWRateKit` into your project manually. Put `CWRateKit` folder in your Xcode project. Make sure to enable `Copy items if needed` and `Create groups`.
+
+## Quick Start
+
+```swift
+import UIKit
+import CWRateKit
+
+class ViewController: UIViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let rateViewController = CWRateKitViewController()
+        rateViewController.modalPresentationStyle = .overFullScreen
+
+        present(rateViewController, animated: true, completion: nil)
+    }
+}
+```
+
+## Usage
+
+If you require deep customization, this section will show you what you can do.
+
+### Overlay
+
+```swift
+rateViewController.overlayOpacity = 0.0
+```
+
+### Popup
+
+```swift
+rateViewController.backgroundColor = .white
+rateViewController.cornerRadius = 16.0
+rateViewController.showShadow = true
+rateViewController.tintColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1.0)
+rateViewController.animationDuration = 0.5
+```
+
+### Close Button
+Property `showCloseButton` added circle button with dismiss action.
+```swift
+rateViewController.showCloseButton = true
+```
+
+### Haptic
+Property hapticMoments allow add taptic feedback for some moments. Default is `[.willChange, .willSubmit]`:
+```swift
+rateViewController.hapticMoments = [.willChange, .willSubmit]
+```
+To disable haptics, set it to `[.none]`
+
+### Marks
+
+```swift
+rateViewController.selectedMarkImage = UIImage(named: "star_selected.png")
+rateViewController.unselectedMarkImage = UIImage(named: "star_unselected.png")
+rateViewController.sizeMarkImage = CGSize(width: 36.0, height: 36.0)
+```
+
+### Header Image
+
+```swift
+rateViewController.showHeaderImage = false
+rateViewController.headerImageIsStatic = true
+rateViewController.headerImage = UIImage(named: "headerIamge")
+rateViewController.headerImageSize = CGSize(width: 72.0, height: 72.0)
+rateViewController.headerImages = [
+    UIImage(named: "smile_1"),
+    UIImage(named: "smile_2"),
+    UIImage(named: "smile_3"),
+    UIImage(named: "smile_4"),
+    UIImage(named: "smile_5")
+]
+rateViewController.animationType = .bounce
+```
+
+### Submit Button
+
+```swift
+rateViewController.confirmRateEnabled = true
+rateViewController.submitText = "Submit"
+rateViewController.submitTextColor = .black
+rateViewController.submitFont = .systemFont(ofSize: 18.0, weight: .medium)
+```
+
+### Success Text
+
+```swift
+rateViewController.successText = "Thank You!"
+rateViewController.successTextColor = .lightGray
+rateViewController.successFont = .systemFont(ofSize: 20.0, weight: .regular)
+```
+
+### Delegate
+Set delegate for rateViewController
+```swift
+rateViewController.delegate = self
+```
+You can check events by implement CWRateKitViewControllerDelegate
+```swift
+extension ViewController: CWRateKitViewControllerDelegate {
+
+    func didChange(rate: Int) {
+        print("Current rate is \(rate)")
+    }
+
+    func didSubmit(rate: Int) {
+        print("Submit with rate \(rate)")
+    }
+    
+    func didDismiss() {
+        print("Dismiss the rate view")
+    }
+    
+}
+```
+
+## Communication
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/cwratekit). (Tag 'cwratekit')
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
+## License
+`CWRateKit` is released under the MIT license. Check LICENSE for details.

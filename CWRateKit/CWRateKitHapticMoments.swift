@@ -13,4 +13,5 @@ public enum CWRateKitHapticMoments {
     case willDismiss
     case willChange
     case willSubmit
+    case none
 }
