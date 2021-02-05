@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CWRateKit"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Swift library for creating \"Rate Us\" popup"
 
   # This description is used to generate tags and improve search results.
@@ -93,8 +93,8 @@ Pod::Spec.new do |spec|
   #
 
   #spec.source_files  = "CWRateKit/*.{h,m,swift}"
-  spec.source_files  = "CWRateKit/"
-  #spec.source_files  = "CWRateKit/**/*"
+  #spec.source_files  = "CWRateKit/"
+  spec.source_files  = "CWRateKit/**/*"
   
   #spec.exclude_files = "Classes/Exclude"
 
@@ -110,7 +110,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "CWRateKit/CWRateKit.bundle"
+  # spec.resources = "CWRateKit/CWRateKit.bundle"
   #spec.resources = ["CWRateKit/Modules/**/View/*.{storyboard,strings}", "CWRateKit/Resources/*.{xcassets}"]
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
