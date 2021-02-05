@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8423691225CD9B970026A331 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8423691125CD9B970026A331 /* Media.xcassets */; };
 		8423696225CDA0600026A331 /* CWRateKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8423696125CDA05F0026A331 /* CWRateKit.bundle */; };
 		9BB89D6E24347DEF00B03E94 /* CWRateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB89D6C24347DEF00B03E94 /* CWRateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BB89D7524347E6800B03E94 /* CWRateKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB89D7424347E6800B03E94 /* CWRateKitViewController.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8423691125CD9B970026A331 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8423696125CDA05F0026A331 /* CWRateKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CWRateKit.bundle; sourceTree = "<group>"; };
 		9BB89D6924347DEF00B03E94 /* CWRateKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CWRateKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB89D6C24347DEF00B03E94 /* CWRateKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWRateKit.h; sourceTree = "<group>"; };
@@ -87,14 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8423690F25CD9B480026A331 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8423691125CD9B970026A331 /* Media.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		9BB89D5F24347DEF00B03E94 = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +114,6 @@
 				9BB89D9D243496B400B03E94 /* CWRateKitHapticMoments.swift */,
 				9BB89D9F2434D79700B03E94 /* CWRateKitAnimationType.swift */,
 				8423696125CDA05F0026A331 /* CWRateKit.bundle */,
-				8423690F25CD9B480026A331 /* Resources */,
 			);
 			path = CWRateKit;
 			sourceTree = "<group>";
@@ -244,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8423691225CD9B970026A331 /* Media.xcassets in Resources */,
 				8423696225CDA0600026A331 /* CWRateKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
