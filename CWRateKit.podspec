@@ -107,8 +107,8 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "Resources/"
-
+  spec.resources = "Resources/CWRateKit.bundle"
+  spec.resources = [“AppName/Modules/**/View/*.{storyboard,strings}”, “CWRateKit/Resources/*.{xcassets}”]
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
